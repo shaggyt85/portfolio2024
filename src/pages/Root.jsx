@@ -11,6 +11,7 @@ import Plane from '../models/Plane'
 
 const Root = () => {
     const [isRotating, setIsRotating] = useState(false)
+    const [currentStage, setCurrentStage] = useState(1)
     const adjustIslandForScreenSize = () => {
         let screenScale = null
         let screenPosition = [0, -6.5, -43]
@@ -24,14 +25,15 @@ const Root = () => {
         }
         return [screenScale, screenPosition, rotation]
     }
+    console.log(isRotating)
     const adjustPlaneForScreenSize = () => {
         let screenScale, screenPosition
         if(window.innerWidth <= 768){
             screenScale=[1.5, 1.5, 1.5]
             screenPosition = [0, -1.5, 0]
         }else{
-            screenScale=[3, 3, 3]
-            screenPosition = [4, -4, -4]
+            screenScale=[2, 2, 2]
+            screenPosition = [0, -1.5, 0]
         }
         return [screenScale, screenPosition]
     }
@@ -45,7 +47,7 @@ const Root = () => {
                 <ambientLight intensity={0.8}/>
                 <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1}/>
                 <Sky />
-                <BooIsland position={isBooIslandPosition} scale={isBooIslandScale} rotation={isBooIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} />
+                <BooIsland position={isBooIslandPosition} scale={isBooIslandScale} rotation={isBooIslandRotation} isRotating={isRotating} setIsRotating={setIsRotating} setCurrentStage={setCurrentStage} />
                 <Plane isRotation={isRotating} rotation={[0, 20, 0]} position={isPlanePosition} scale={isPlaneScale}/>
                 </ Suspense>
         </Canvas>
