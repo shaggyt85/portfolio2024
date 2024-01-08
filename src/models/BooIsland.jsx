@@ -13,7 +13,6 @@ import { useFrame, useThree } from "@react-three/fiber";
 import islandScene from '../assets/3d/low_poly_island.glb'
 import { a } from "@react-spring/three";
 
-
 const BooIsland = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
     const islandRef = useRef();
     const { gl, viewport } = useThree()
@@ -21,7 +20,6 @@ const BooIsland = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => 
     const lastX = useRef(0);
     const rotationSpeed = useRef(0)
     const dampingFactor = 0.95
-    console.log(setCurrentStage)
     const handlePointerDown = (e) => {
         e.stopPropagation()
         e.preventDefault()
@@ -83,12 +81,10 @@ const BooIsland = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => 
                 rotationSpeed.current = 0
             }
             islandRef.current.rotation.y += rotationSpeed.current;
-
         } else {
             const rotation = islandRef.current.rotation.y;
             const normalizedRotation =
                 ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
-
             // Set the current stage based on the island's orientation
             switch (true) {
                 case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
@@ -104,7 +100,7 @@ const BooIsland = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => 
                     setCurrentStage(1);
                     break;
                 default:
-                    setCurrentStage(1);
+                    setCurrentStage(null);
             }
         }
     })
