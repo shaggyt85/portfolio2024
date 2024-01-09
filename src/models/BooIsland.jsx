@@ -87,8 +87,8 @@ const BooIsland = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => 
                 ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
             // Set the current stage based on the island's orientation
             switch (true) {
-                case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
-                    setCurrentStage(4);
+                case normalizedRotation >= 5.85 && normalizedRotation <= 6.35:
+                    setCurrentStage(1);
                     break;
                 case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
                     setCurrentStage(3);
@@ -97,7 +97,7 @@ const BooIsland = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => 
                     setCurrentStage(2);
                     break;
                 case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:
-                    setCurrentStage(1);
+                    setCurrentStage(4);
                     break;
                 default:
                     setCurrentStage(null);
