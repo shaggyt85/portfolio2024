@@ -90,13 +90,13 @@ const BooIsland = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => 
                 case normalizedRotation >= 5.85 && normalizedRotation <= 6.35:
                     setCurrentStage(1);
                     break;
-                case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
-                    setCurrentStage(3);
-                    break;
-                case normalizedRotation >= 2.4 && normalizedRotation <= 2.6:
+                case normalizedRotation >= 4.5 && normalizedRotation <= 5.1:
                     setCurrentStage(2);
                     break;
-                case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:
+                case normalizedRotation >= 3 && normalizedRotation <= 3.5:
+                    setCurrentStage(3);
+                    break;
+                case normalizedRotation >= 1 && normalizedRotation <= 1.5:
                     setCurrentStage(4);
                     break;
                 default:
