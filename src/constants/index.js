@@ -23,7 +23,9 @@ import {
   summiz,
   tailwindcss,
   threads,
+  X,
   typescript,
+  whatsapp,
 } from "../assets/icons";
 
 export const skills = [
@@ -113,6 +115,7 @@ export const experiences = [
   {
     title: "Front-end Developer",
     company_name: "BmBot",
+    country: "Venezuela - Caracas",
     icon: BM,
     iconBg: "#accbe1",
     date: "September 2022 - March 2023",
@@ -125,6 +128,7 @@ export const experiences = [
   },
   {
     title: "Freelancer",
+    country: "Chile - Puerto Varas",
     company_name: "VisibilityTech",
     icon: trabajardesdecasa,
     iconBg: "#fbc3bc",
@@ -139,14 +143,15 @@ export const experiences = [
   {
     title: "Control and logistics coordinator",
     company_name: "Techsolution",
+    country: "Chile - Puerto Varas",
     icon: techsolution,
     iconBg: "#b7e4c7",
-    date: "Jan 2022 - Jan 2023",
+    date: "April 2019 - April 2021",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "As a Full Stack Web Developer, my experience includes being the general coordinator of all technicians at the national level and a project developer. I was in charge of the elaboration and implementation of projects in different regions, including the creation of web servers, networks, and programs.",
+      "Coordinating and leading a team of technicians at the national level to ensure successful project implementation in different regions.",
+      "I developed and implemented web server and network solutions that improved operational efficiency and information security at the national level",
+      "I led the creation of custom programs that optimized operational processes in various regions, resulting in increased productivity and efficiency.",
     ],
   },
 ];
@@ -160,12 +165,22 @@ export const socialLinks = [
   {
     name: "GitHub",
     iconUrl: github,
-    link: "https://github.com/YourGitHubUsername",
+    link: "https://github.com/shaggyt85",
   },
   {
     name: "LinkedIn",
     iconUrl: linkedin,
-    link: "https://www.linkedin.com/in/YourLinkedInUsername",
+    link: "https://linkedin.com/in/robertmedina85",
+  },
+  {
+    name: "X",
+    iconUrl: X,
+    link: "https://twitter.com/shaggyt851",
+  },
+  {
+    name: "Whatsapp",
+    iconUrl: whatsapp,
+    link: "https://wa.me/34697688126",
   },
 ];
 

@@ -24,7 +24,10 @@ body:has(.card[data-color="green"]:hover) {
 
 @layer utilities {
   .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
+    @apply max-w-5xl mx-auto sm:p-16 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
+  }
+  .max-social {
+    @apply max-w-5xl mx-auto sm:px-16 px-8 pb-8;
   }
 
   .head-text {
