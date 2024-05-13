@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import Fox from "../models/Fox";
 import Loader from "../components/Loader";
-import Alert from "../components/Alert";
+import { Alert } from "../components";
 import Socials from "../components/Socials";
 
 const Contact = () => {
@@ -12,7 +12,7 @@ const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [isLoading, setIsLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
-  const { alert, showAlert, hideAlert } = useAlert();
+  const { show, text, type, showAlert, hideAlert } = useAlert();
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -37,11 +37,7 @@ const Contact = () => {
       )
       .then(() => {
         setIsLoading(false);
-        showAlert({
-          show: true,
-          text: "Message sent successfully!",
-          type: "success",
-        });
+        showAlert("Message sent successfully!", "success");
         setTimeout(() => {
           hideAlert();
           setCurrentAnimation("idle");
@@ -52,17 +48,13 @@ const Contact = () => {
         setIsLoading(false);
         setCurrentAnimation("idle");
         console.log(error);
-        showAlert({
-          show: true,
-          text: "Something went wrong!",
-          type: "error",
-        });
+        showAlert("Something went wrong!", "error");
       });
   };
   return (
     <>
       <section className="relative flex lg:flex-row flex-col max-container ">
-        {alert.show && <Alert {...alert} />}
+        {show && <Alert text={text} type={type} />}
         <div className="flex-1 min-w-[50%] flex flex-col">
           <h1 className="head-text">Get in Touch</h1>
           <form
@@ -104,7 +96,7 @@ const Contact = () => {
                 rows={5}
                 className="textarea"
                 placeholder="Let me know I can help you!"
-                required
+                // required
                 value={form.message}
                 onChange={handleChange}
                 onFocus={handleFocus}
