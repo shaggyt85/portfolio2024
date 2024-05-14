@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unknown-property */
 import { useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Loader } from "../components/Loader/Loader";
-import BooIsland from "../models/BooIsland";
+import { Loader } from "../components";
+import { BooIsland } from "../models/BooIsland/BooIsland";
 import Sky from "../models/Sky";
 import Plane from "../models/Plane";
 import { HomeInfo } from "../components";

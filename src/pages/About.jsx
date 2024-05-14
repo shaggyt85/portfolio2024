@@ -3,7 +3,8 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { about_image } from "../assets/images";
-import { skills, experiences } from "../constants";
+import { Experiences } from "../constants/Experiences";
+import { Skills } from "../constants/Skills";
 import "react-vertical-timeline-component/style.min.css";
 import { Cta } from "../components/Cta/Cta";
 
@@ -61,7 +62,7 @@ const About = () => {
       <div className="p-4 flex flex-col">
         <h3 className="subhead-text">My Skills</h3>
         <div className="mt-16 flex flex-wrap gap-8 ">
-          {skills.map((skill, index) => (
+          {Skills.map((skill, index) => (
             <div key={index} className="block-container w-20 h-20">
               <div className="btn-back rounded-xl" />
               <div className="btn-front rounded-xl flex justify-center items-center">
@@ -85,7 +86,7 @@ const About = () => {
         </div>
         <div className="mt-12 flex">
           <VerticalTimeline>
-            {experiences.map((experience) => (
+            {Experiences.map((experience) => (
               <VerticalTimelineElement
                 key={experience.company_name}
                 date={experience.date}

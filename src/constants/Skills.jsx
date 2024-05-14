@@ -15,7 +15,7 @@ import {
   sass,
   tailwindcss,
   typescript,
-} from "../assets/images";
+} from "../assets/icons";
 export const Skills = [
   {
     imageUrl: css,
