@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { Loader } from "../components";
 import { BooIsland } from "../models/BooIsland/BooIsland";
 import Sky from "../models/Sky";
-import Plane from "../models/Plane";
+import { Plane } from "../models/Plane/Plane";
 import { HomeInfo } from "../components";
 
 const Root = () => {
