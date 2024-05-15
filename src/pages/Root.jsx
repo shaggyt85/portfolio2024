@@ -2,9 +2,7 @@
 import { useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Loader } from "../components";
-import { BooIsland } from "../models/BooIsland/BooIsland";
-import Sky from "../models/Sky";
-import { Plane } from "../models/Plane/Plane";
+import { BooIsland, Sky, Plane } from "../models";
 import { HomeInfo } from "../components";
 
 const Root = () => {
