@@ -2,7 +2,8 @@ import { useAlert } from "../hooks/useAlert";
 import { useRef, useState, Suspense } from "react";
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
-import Fox from "../models/Fox";
+import { Fox } from "../models/Fox/Fox";
+// import Fox from "../models/Fox";
 import { Alert, Loader, Socials } from "../components";
 
 const Contact = () => {
