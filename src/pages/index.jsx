@@ -1,6 +1,6 @@
 export { About } from "./About";
-import Contact from "./Contact";
-import Root from "./Root";
+export { Contact } from "./Contact";
+export { Root } from "./Root";
 import Projects from "./Projects";
 
-export { Contact, Root, Projects };
+export { Projects };

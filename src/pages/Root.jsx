@@ -5,7 +5,7 @@ import { BooIsland, Sky, Plane } from "../models";
 import { HomeInfo, LightSetup, Loader } from "../components";
 import { AdjustForScreenSize } from "../utils";
 
-const Root = () => {
+export const Root = () => {
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(1);
   const isPlaneScale = AdjustForScreenSize([1.5, 1.5, 1.5], [2, 2, 2]);
@@ -48,5 +48,3 @@ const Root = () => {
     </section>
   );
 };
-
-export default Root;

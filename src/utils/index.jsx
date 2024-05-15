@@ -1,4 +1,9 @@
-export { LinkWrapper } from "./LinkWrapper";
-export { Spinner } from "./Spinner";
-export { Logo } from "./Logo";
 export { AdjustForScreenSize } from "./AdjustForScreenSize";
+export { Image } from "./Image";
+export { Input } from "./input";
+export { LinkWrapper } from "./LinkWrapper";
+export { Logo } from "./Logo";
+export { Spinner } from "./Spinner";
+export { SubmitButton } from "./SubmitButton";
+export { Text } from "./Text";
+export { TextAreas } from "./TextArea";
