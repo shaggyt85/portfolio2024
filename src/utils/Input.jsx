@@ -6,13 +6,14 @@ export const Input = ({
   onChange,
   onFocus,
   onBlur,
+  className,
 }) => (
   <label className="text-black-500 font-semibold">
     {name}
     <input
       type={type}
       name={name.toLowerCase()}
-      className="input"
+      className={className}
       placeholder={placeholder}
       required
       value={value}

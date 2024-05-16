@@ -17,6 +17,7 @@ export const Form = ({
       onChange={handleChange}
       onFocus={handleFocus}
       onBlur={handleBlur}
+      className={"input"}
     />
     <Input
       name="Email"
@@ -26,6 +27,7 @@ export const Form = ({
       onChange={handleChange}
       onFocus={handleFocus}
       onBlur={handleBlur}
+      className={"input"}
     />
     <TextAreas
       name="Message"
