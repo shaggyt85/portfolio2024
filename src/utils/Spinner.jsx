@@ -1,24 +1,17 @@
 export const Spinner = () => {
-  <>
-    <div className="loadership_RQYVD">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    ;
-  </>;
-};
-export const Spinners = () => {
   return (
-    <div className="spinner">
-      <div className="spinner-border" role="status">
-        <h1 className="visually-hidden">Loading...</h1>
+    <>
+      <div className="min-h-[calc(100vh-80px)] flex  items-center justify-center">
+        <div className="loadership_RQYVD">
+          <div>W</div>
+          <div>e</div>
+          <div>l</div>
+          <div>c</div>
+          <div>o</div>
+          <div>m</div>
+          <div>e</div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
