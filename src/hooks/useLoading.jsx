@@ -6,8 +6,8 @@ export const useLoading = () => {
     const handleLoad = () => {
       setLoading(false);
     };
-    window.addEventListener("load", handleLoad);
-    return () => window.removeEventListener("load", handleLoad);
+    window.addEventListener("DOMContentLoaded", handleLoad);
+    return () => window.removeEventListener("DOMContentLoaded", handleLoad);
   }, []);
   return loading;
 };
