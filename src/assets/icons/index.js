@@ -27,8 +27,10 @@ import soundon from "./soundon.png";
 import soundoff from "./soundoff.png";
 import whatsapp from "./whatsapp-50.svg";
 import X from "./x.svg";
+import mynauiSearch from "./MynauiSearch.svg";
 
 export {
+  mynauiSearch,
   X,
   whatsapp,
   css,

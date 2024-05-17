@@ -1,3 +1,24 @@
 export const Spinner = () => {
-  <div className="w-20 h-20 border-opacity-20 border-2 border-blue-500 border-t-blue-500 rounder-full animate-spin" />;
+  <>
+    <div className="loadership_RQYVD">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    ;
+  </>;
+};
+export const Spinners = () => {
+  return (
+    <div className="spinner">
+      <div className="spinner-border" role="status">
+        <h1 className="visually-hidden">Loading...</h1>
+      </div>
+    </div>
+  );
 };

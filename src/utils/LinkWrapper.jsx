@@ -8,8 +8,25 @@ children: Esta prop son los elementos hijos que se deben renderizar dentro del c
 */
 import { Link } from "react-router-dom";
 
-export const LinkWrapper = ({ to, className, children, ...props }) => (
-  <Link to={to} className={className} {...props}>
-    {children}
-  </Link>
-);
+export const LinkWrapper = ({
+  to,
+  className,
+  children,
+  target,
+  rel,
+  ...props
+}) => {
+  if (target === "_blank" && rel === "noopener noreferrer") {
+    return (
+      <a href={to} className={className} target={target} rel={rel} {...props}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link to={to} className={className} {...props}>
+      {children}
+    </Link>
+  );
+};
