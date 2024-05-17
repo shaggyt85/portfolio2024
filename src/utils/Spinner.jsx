@@ -13,3 +13,12 @@ export const Spinner = () => {
     ;
   </>;
 };
+export const Spinners = () => {
+  return (
+    <div className="spinner">
+      <div className="spinner-border" role="status">
+        <h1 className="visually-hidden">Loading...</h1>
+      </div>
+    </div>
+  );
+};
