@@ -195,19 +195,31 @@ body:has(.card[data-color="green"]:hover) {
 .loadership_RQYVD {
   display: flex;
   position: relative;
-  width: 86px;
+  width: 160px;
   height: 45px;
 }
 
 .loadership_RQYVD div {
-  position: absolute;
+  position: relative;
   top: 0px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #958be5;
+  width: 20px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #958be5;
   animation: loadership_RQYVD_wave alternate 1.2s infinite;
   animation-timing-function: cubic-bezier(.56,-0.01,.48,1);
+}
+
+.loadership_RQYVD div::before {
+  content: "";
+  position: absolute;
+  top: -15px; /* Ajusta según sea necesario */
+  left: -15px; /* Ajusta según sea necesario */
+  font-size: 10px; /* Ajusta según sea necesario */
+  color: #958be5; /* Coincide con el color del punto */
 }
 
 .loadership_RQYVD div:nth-child(1) {
