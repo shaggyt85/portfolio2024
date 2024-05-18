@@ -24,17 +24,63 @@ export const UserInteraction = ({
     e.preventDefault();
     setIsRotating(false);
   };
-  const handlePointerMove = (e) => {
+  // sin repetir tanto código
+  const handleMovement = (clientX) => {
+    const delta = (clientX - lastX.current) / viewport.width;
+    islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+    lastX.current = clientX;
+    rotationSpeed.current = delta * 0.01 * Math.PI;
+  };
+
+  const handleTouchMove = (e) => {
     e.stopPropagation();
     e.preventDefault();
     if (isRotating) {
-      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-      const delta = (clientX - lastX.current) / viewport.width;
-      islandRef.current.rotation.y += delta * 0.01 * Math.PI;
-      lastX.current = clientX;
-      rotationSpeed.current = delta * 0.01 * Math.PI;
+      handleMovement(e.touches[0].clientX);
     }
   };
+
+  const handleMouseMove = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    if (isRotating) {
+      handleMovement(e.clientX);
+    }
+  };
+  // Prueba simple separando las interacciones
+  // const handleMouseMove = (e) => {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  //   if (isRotating) {
+  //     const clientX = e.clientX;
+  //     const delta = (clientX - lastX.current) / viewport.width;
+  //     islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+  //     lastX.current = clientX;
+  //     rotationSpeed.current = delta * 0.01 * Math.PI;
+  //   }
+  // };
+  // const handleTouchMove = (e) => {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  //   if (isRotating) {
+  //     const clientX = e.touches[0].clientX;
+  //     const delta = (clientX - lastX.current) / viewport.width;
+  //     islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+  //     lastX.current = clientX;
+  //     rotationSpeed.current = delta * 0.01 * Math.PI;
+  //   }
+  // };
+  // const handlePointerMove = (e) => {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  //   if (isRotating) {
+  //     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+  //     const delta = (clientX - lastX.current) / viewport.width;
+  //     islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+  //     lastX.current = clientX;
+  //     rotationSpeed.current = delta * 0.01 * Math.PI;
+  //   }
+  // };
   const handleKeyDown = (e) => {
     if (e.key === "ArrowLeft") {
       if (!isRotating) setIsRotating(true);
@@ -54,18 +100,22 @@ export const UserInteraction = ({
     const canvas = gl.domElement;
     canvas.addEventListener("pointerdown", handlePointerDown);
     canvas.addEventListener("pointerup", handlePointerUp);
-    canvas.addEventListener("pointermove", handlePointerMove);
+    // canvas.addEventListener("pointermove", handlePointerMove);
+    canvas.addEventListener("mousemove", handleMouseMove);
+    canvas.addEventListener("touchmove", handleTouchMove);
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("keyup", handleKeyUp);
     return () => {
       canvas.removeEventListener("pointerdown", handlePointerDown);
       canvas.removeEventListener("pointerup", handlePointerUp);
-      canvas.removeEventListener("pointermove", handlePointerMove);
+      // canvas.removeEventListener("pointermove", handlePointerMove);
+      canvas.addEventListener("mousemove", handleMouseMove);
+      canvas.addEventListener("touchmove", handleTouchMove);
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [gl, handlePointerDown, handlePointerMove, handlePointerUp]);
+  }, [gl, handlePointerDown, handlePointerUp]);
 
   useFrame(() => {
     if (!isRotating) {
