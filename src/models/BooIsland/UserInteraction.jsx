@@ -28,13 +28,31 @@ export const UserInteraction = ({
     e.stopPropagation();
     e.preventDefault();
     if (isRotating) {
-      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientX =
+        e.touches && e.touches.length > 0 ? e.touches[0].clientX : e.clientX;
       const delta = (clientX - lastX.current) / viewport.width;
       islandRef.current.rotation.y += delta * 0.01 * Math.PI;
       lastX.current = clientX;
       rotationSpeed.current = delta * 0.01 * Math.PI;
+      console.log(rotationSpeed.current, "rotationSpeed");
+      if (e.touches && e.touches.length > 0) {
+        console.log(e.touches[0].clientX, "touches");
+      }
     }
   };
+  // const handlePointerMove = (e) => {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  //   if (isRotating) {
+  //     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+  //     const delta = (clientX - lastX.current) / viewport.width;
+  //     islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+  //     lastX.current = clientX;
+  //     rotationSpeed.current = delta * 0.01 * Math.PI;
+  //     console.log(rotationSpeed.current, "rotationSpeed");
+  //     console.log(e.touches[0].clientX, "touches");
+  //   }
+  // };
   const handleKeyDown = (e) => {
     if (e.key === "ArrowLeft") {
       if (!isRotating) setIsRotating(true);
@@ -49,27 +67,47 @@ export const UserInteraction = ({
   const handleKeyUp = (e) => {
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") setIsRotating(false);
   };
-
   useEffect(() => {
     const canvas = gl.domElement;
-    canvas.addEventListener("pointerdown", handlePointerDown);
-    canvas.addEventListener("pointerup", handlePointerUp);
-    canvas.addEventListener("pointermove", handlePointerMove, {
-      passive: false,
-    });
+    canvas.addEventListener("mousedown", handlePointerDown);
+    canvas.addEventListener("mouseup", handlePointerUp);
+    canvas.addEventListener("mousemove", handlePointerMove);
+    canvas.addEventListener("touchstart", handlePointerDown);
+    canvas.addEventListener("touchend", handlePointerUp);
+    canvas.addEventListener("touchmove", handlePointerMove);
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("keyup", handleKeyUp);
     return () => {
-      canvas.removeEventListener("pointerdown", handlePointerDown);
-      canvas.removeEventListener("pointerup", handlePointerUp);
-      canvas.removeEventListener("pointermove", handlePointerMove, {
-        passive: false,
-      });
+      canvas.removeEventListener("mousedown", handlePointerDown);
+      canvas.removeEventListener("mouseup", handlePointerUp);
+      canvas.removeEventListener("mousemove", handlePointerMove);
+      canvas.removeEventListener("touchstart", handlePointerDown);
+      canvas.removeEventListener("touchend", handlePointerUp);
+      canvas.removeEventListener("touchmove", handlePointerMove);
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [gl, handlePointerDown, handlePointerMove, handlePointerUp]);
+  }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
+  // useEffect(() => {
+  //   const canvas = gl.domElement;
+  //   canvas.addEventListener("pointerdown", handlePointerDown);
+  //   canvas.addEventListener("pointerup", handlePointerUp);
+  //   canvas.addEventListener("pointermove", handlePointerMove, {
+  //     passive: false,
+  //   });
+  //   document.addEventListener("keydown", handleKeyDown);
+  //   document.addEventListener("keyup", handleKeyUp);
+  //   return () => {
+  //     canvas.removeEventListener("pointerdown", handlePointerDown);
+  //     canvas.removeEventListener("pointerup", handlePointerUp);
+  //     canvas.removeEventListener("pointermove", handlePointerMove, {
+  //       passive: false,
+  //     });
+  //     document.removeEventListener("keydown", handleKeyDown);
+  //     document.removeEventListener("keyup", handleKeyUp);
+  //   };
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [gl, handlePointerDown, handlePointerMove, handlePointerUp]);
 
   useFrame(() => {
     if (!isRotating) {
