@@ -33,8 +33,6 @@ export const UserInteraction = ({
       islandRef.current.rotation.y += delta * 0.01 * Math.PI;
       lastX.current = clientX;
       rotationSpeed.current = delta * 0.01 * Math.PI;
-      console.log(rotationSpeed.current, "rotationSpeed");
-      console.log(e.touches[0].clientX, "touches");
     }
   };
   const handleKeyDown = (e) => {
