@@ -115,7 +115,13 @@ export const UserInteraction = ({
       document.removeEventListener("keyup", handleKeyUp);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [gl, handlePointerDown, handlePointerUp]);
+  }, [
+    gl,
+    handlePointerDown,
+    handlePointerUp,
+    handleMouseMove,
+    handleTouchMove,
+  ]);
 
   useFrame(() => {
     if (!isRotating) {
