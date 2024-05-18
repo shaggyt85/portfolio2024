@@ -1,6 +1,6 @@
 export { AdjustForScreenSize } from "./AdjustForScreenSize";
 export { Image } from "./Image";
-export { Input } from "./input";
+export { Input } from "./Input";
 export { LinkWrapper } from "./LinkWrapper";
 export { Logo } from "./Logo";
 export { Spinner } from "./Spinner";
