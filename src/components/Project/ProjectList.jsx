@@ -2,8 +2,10 @@ import { ProjectItems } from "./ProjectItems";
 
 export const ProjectList = ({ projects }) => (
   <>
-    {projects.map((project, index) => (
-      <ProjectItems key={index} project={project} />
-    ))}
+    {[...projects]
+      .sort((a, b) => b.id - a.id)
+      .map((project) => (
+        <ProjectItems key={project.id} project={project} />
+      ))}
   </>
 );

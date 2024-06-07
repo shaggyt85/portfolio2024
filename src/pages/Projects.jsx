@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { FilterProjects, ProjectList } from "../components/Project";
-import { useProject, useFilterProjects } from "../hooks";
+import { useFilterProjects } from "../hooks"; //para usarlo con firebase necesita agregarle el useProject del hooks
 import { Input, Image } from "../utils";
 import { mynauiSearch } from "../assets/icons";
+import { ProjectsListData } from "../constants/ProjectsListData";
 export const Projects = ({ filterFunction = FilterProjects }) => {
-  const data = useProject();
+  // const data = useProject();
   const [search, setSearch] = useState("");
-  const results = useFilterProjects(data, search, filterFunction);
+  // const results = useFilterProjects(data, search); se utiliza para trabajarlo con el firebases.
+  // const results = useFilterProjects(data, search, filterFunction);
+  const results = useFilterProjects(ProjectsListData, search, filterFunction);
   return (
     <section className="max-container">
       <div className="flex justify-center items-center">

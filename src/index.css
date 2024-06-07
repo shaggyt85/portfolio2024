@@ -1,20 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+:root {
+  --font-poppins: "Poppins", sans-serif;
+  --font-work-sans: "Work Sans", sans-serif;
+  --bg-gradient-blue: linear-gradient(135deg, #0061ff -20%, #60efff 120%);
+  --bg-gradient-orange: linear-gradient(135deg, #ff0f7b -20%, #f89b29 120%);
+  --bg-gradient-pink: linear-gradient(135deg, #e81cff -20%, #40c9ff 120%);
+  --bg-gradient-black: linear-gradient(135deg, #0a1647 -20%, #e4e7e4 120%);
+  --bg-gradient-yellow: linear-gradient(135deg, #f7971e -20%, #ffd200 120%);
+  --bg-gradient-green: linear-gradient(135deg, #adfda2 -20%, #11d3f3 120%);
+  --bg-gradient-red: linear-gradient(135deg, #ff4b1f -20%, #ff9068 120%);
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: "Work Sans", sans-serif;
+  font-family: var(--font-work-sans);
   background-color: rgb(203 213 225 / 0.2);
 }
 
 @layer utilities {
+  .max-cotainer, .max-social, .header{
+    @apply max-w-screen-2xl mx-auto;
+  }
   .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
+    @apply sm:p-16 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
   }
   .max-social {
-    @apply max-w-5xl mx-auto sm:px-16 px-8 pb-8;
+    @apply sm:px-16 px-8 pb-8;
   }
 
   .head-text {
@@ -46,7 +60,7 @@ body {
   }
 
   .header {
-    @apply flex justify-between sm:items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 z-20 right-0 bg-transparent left-0;
+    @apply flex justify-between sm:items-center sm:px-16 px-8 py-4 absolute top-0 z-20 right-0 bg-transparent left-0;
   }
 
   .footer {
@@ -103,31 +117,30 @@ body {
 }
 
 .block-container .btn-back-red {
-  background: linear-gradient(135deg, #ff4b1f -20%, #ff9068 120%);
+  background: var(--bg-gradient-red);
 }
 
 .block-container .btn-back-green {
-  background: linear-gradient(135deg, #adfda2 -20%, #11d3f3 120%);
+  background: var(--bg-gradient-green);
 }
 
 .block-container .btn-back-yellow {
-  background: linear-gradient(135deg, #f7971e -20%, #ffd200 120%);
-}
+  background: var(--bg-gradient-yellow)}
 
 .block-container .btn-back-blue {
-  background: linear-gradient(135deg, #0061ff -20%, #60efff 120%);
+  background: var(--bg-gradient-blue);
 }
 
 .block-container .btn-back-orange {
-  background: linear-gradient(135deg, #ff0f7b -20%, #f89b29 120%);
+  background: var(--bg-gradient-orange);
 }
 
 .block-container .btn-back-pink {
-  background: linear-gradient(135deg, #e81cff -20%, #40c9ff 120%);
+  background: var(--bg-gradient-pink);
 }
 
 .block-container .btn-back-black {
-  background: linear-gradient(135deg, #0a1647 -20%, #e4e7e4 120%);
+  background: var(--bg-gradient-black);
 }
 
 .block-container .btn-front {
