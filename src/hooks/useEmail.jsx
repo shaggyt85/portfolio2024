@@ -27,7 +27,7 @@ export const useEmail = (
       .catch((error) => {
         setIsLoading(false);
         setCurrentAnimation("idle");
-        console.log(error);
+        console.error(error);
         showAlert("Something went wrong!", "error");
       });
   };

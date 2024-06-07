@@ -8,7 +8,6 @@ export const UserInteractionMouse = ({
   isRotating,
   setIsRotating,
 }) => {
-  // const [isRotating, setIsRotating] = useState(false);
   const lastX = useRef(0);
   const rotationSpeed = useRef(0);
 
@@ -18,7 +17,6 @@ export const UserInteractionMouse = ({
     setIsRotating(true);
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     lastX.current = clientX;
-    console.log("pointer down", clientX);
   };
 
   const handlePointerUp = (e) => {
@@ -37,7 +35,6 @@ export const UserInteractionMouse = ({
       islandRef.current.rotation.y += delta * 0.01 * Math.PI;
       lastX.current = clientX;
       rotationSpeed.current = delta * 0.01 * Math.PI;
-      console.log(rotationSpeed.current, "rotationSpeed");
     }
   };
 
