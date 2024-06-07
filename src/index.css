@@ -25,10 +25,10 @@ body {
     @apply max-w-screen-2xl mx-auto;
   }
   .max-container {
-    @apply sm:p-16 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
+    @apply max-w-screen-2xl mx-auto sm:p-16 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
   }
   .max-social {
-    @apply sm:px-16 px-8 pb-8;
+    @apply max-w-screen-2xl mx-auto sm:px-16 px-8 pb-8;
   }
 
   .head-text {
@@ -60,7 +60,7 @@ body {
   }
 
   .header {
-    @apply flex justify-between sm:items-center sm:px-16 px-8 py-4 absolute top-0 z-20 right-0 bg-transparent left-0;
+    @apply max-w-screen-2xl mx-auto flex justify-between sm:items-center sm:px-16 px-8 py-4 absolute top-0 z-20 right-0 bg-transparent left-0;
   }
 
   .footer {
