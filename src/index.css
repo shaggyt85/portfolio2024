@@ -46,7 +46,7 @@ body {
   }
 
   .header {
-    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 z-10 right-0 bg-transparent left-0;
+    @apply flex justify-between sm:items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 z-20 right-0 bg-transparent left-0;
   }
 
   .footer {

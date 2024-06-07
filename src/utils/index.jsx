@@ -7,3 +7,5 @@ export { Spinner } from "./Spinner";
 export { SubmitButton } from "./SubmitButton";
 export { Text } from "./Text";
 export { TextAreas } from "./TextArea";
+export { Toggle } from "./Toggle";
+export { SvgX } from "./svgX";
