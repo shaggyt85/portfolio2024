@@ -63,7 +63,7 @@ export const ProjectsListData = [
     imageSrc: landpages,
     techs: "Javascript Vainilla",
     github: "https://github.com/shaggyt85/async_landpages",
-    web: "https://github.com/shaggyt85/async_landpages",
+    web: "https://shaggyt85.github.io/async_landpages/",
   },
   {
     id: 8,
@@ -71,5 +71,6 @@ export const ProjectsListData = [
     imageSrc: screenMagic,
     techs: "Html5, Css3, Javascript",
     github: "https://github.com/shaggyt85/ScreenMagic",
+    web: "https://github.com/shaggyt85/ScreenMagic",
   },
 ];
