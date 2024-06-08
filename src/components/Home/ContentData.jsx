@@ -5,7 +5,7 @@ export const ContentData = [
   {
     id: 1,
     component: (
-      <div className="flex flex-col  gap-64 sm:gap-96">
+      <div className="flex flex-col  gap-64  lg:gap-96 xl:gap-[28rem] ">
         <h1 className="sm:text-ml sm:leading-snug text-center neo-brutalism-blue py-2 px-4 text-white mx-5">
           Hi, I am <span className="font-bold">Robert Medina</span> 👋
           <br />A Front-End Developer.
