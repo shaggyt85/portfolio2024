@@ -9,7 +9,7 @@ export const StageSetter = ({ isRotating, setCurrentStage, islandRef }) => {
       // Set the current stage based on the island's orientation
       switch (true) {
         case normalizedRotation >= 5.85 && normalizedRotation <= 6.35:
-          setCurrentStage(1);
+          setCurrentStage(5);
           break;
         case normalizedRotation >= 4.5 && normalizedRotation <= 5.1:
           setCurrentStage(2);
