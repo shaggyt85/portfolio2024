@@ -7,8 +7,6 @@ export const UserInteractionKeyboard = ({
   islandRef,
 }) => {
   const rotationSpeed = useRef(0);
-  // ...resto del código...
-
   const handleKeyPress = (e) => {
     // manejar la presión de teclas aquí
     if (e.key === "ArrowLeft") {
@@ -33,7 +31,6 @@ export const UserInteractionKeyboard = ({
         onKeyPress={handleKeyPress}
         onKeyRelease={handleKeyRelease}
       />
-      {/* ...resto del JSX... */}
     </>
   );
 };
