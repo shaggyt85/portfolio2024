@@ -6,7 +6,7 @@
   "type": "module",
   "author": "Robert Medina",
   "license": "MIT",
-  "homepage": "",  
+  "homepage": "https://portfolio2024rm.vercel.app/",  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
