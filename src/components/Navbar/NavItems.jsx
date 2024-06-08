@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
-export const NavItem = ({ to, children }) => (
-  <NavLink
-    to={to}
-    className={({ isActive }) => (isActive ? "text-greenRgb " : "text-white")}
-  >
+
+const determineClass = ({ isActive }) =>
+  isActive ? "text-greenRgb " : "sm:text-white text-black";
+
+export const NavItems = ({ to, children, onLinkClick }) => (
+  <NavLink to={to} onClick={onLinkClick} className={determineClass}>
     {children}
   </NavLink>
 );

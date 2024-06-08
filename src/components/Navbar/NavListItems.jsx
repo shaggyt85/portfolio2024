@@ -1,17 +1,15 @@
-import { NavItem } from "./NavItems";
-const navItems = [
-  { to: "/about", label: "About" },
-  { to: "/projects", label: "Projects" },
-  { to: "/contact", label: "Contact" },
-];
-export const NavListItems = () => {
-  return (
-    <>
-      {navItems.map((item) => (
-        <NavItem key={item.to} to={item.to}>
-          {item.label}
-        </NavItem>
-      ))}
-    </>
-  );
+import { NavItems } from "./NavItems";
+import { navItems } from "../../constants/RoutesNavbarLinks";
+
+export const NavListItems = ({ onLinkClick }) => {
+  return navItems.map((item) => (
+    <NavItems
+      className="bg-gradient-to-r from-[#00c6ff] to-[#0072ff]"
+      key={item.to}
+      to={item.to}
+      onLinkClick={onLinkClick}
+    >
+      {item.label}
+    </NavItems>
+  ));
 };
